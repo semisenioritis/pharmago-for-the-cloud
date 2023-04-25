@@ -105,14 +105,14 @@ hiddenUpload.onchange = () => {
                     var data = new FormData()
                     data.append('file', blob , 'word.png')
 
-                    fetch('http://127.0.0.1:5000/', {
+                    fetch(window.location.origin, {
                       method: 'POST',
                       body: data
 
                     }).then(response => response.json()
                     ).then(json => {
                       console.log(json)
-                    }).then(window.location.href ='http://127.0.0.1:5000/results');
+                    }).then(window.location.href =window.location.origin+'/results');
 
 //                    a.download = 'cropped-image.jpg' // output image name
 //                    a.click()
